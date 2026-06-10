@@ -1,0 +1,48 @@
+{
+  "name": "testsprite_generate_code_and_execute",
+  "description": "Generate and execute tests. Before calling this tool, ensure the local project is running — preferably in production mode (e.g. `npm run build && npm run start` for Next.js, `npm run build && npm run preview` for Vite). If you started the project with a production build+serve command, set serverMode to 'production' (note: serverMode is also auto-detected from the running process). If running a dev server (e.g. npm run dev), leave serverMode as default — frontend tests will be limited to 15 high-priority tests to prevent dev server overload. If local server is running and test plan is already generated, call this tool directly — DO NOT call testsprite_bootstrap first. AI assistant analyzes the test results and saves a markdown report.",
+  "inputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "projectName": {
+        "description": "The name is the name of the root directory of the current project",
+        "type": "string"
+      },
+      "projectPath": {
+        "description": "Absolute path of current project root",
+        "type": "string"
+      },
+      "testIds": {
+        "default": [],
+        "description": "The test ids of the test plan, default is empty array, means all test plan will be applied",
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "additionalInstruction": {
+        "default": "",
+        "description": "Additional instructions for test generation and execution, set to empty string if not specified by the user",
+        "type": "string"
+      },
+      "serverMode": {
+        "description": "Whether the local server is running in production or development mode. AI should detect this from how the server was started (build+start = production, dev = development). Defaults to development.",
+        "default": "development",
+        "type": "string",
+        "enum": [
+          "production",
+          "development"
+        ]
+      }
+    },
+    "required": [
+      "projectName",
+      "projectPath",
+      "testIds",
+      "additionalInstruction",
+      "serverMode"
+    ],
+    "additionalProperties": false
+  }
+}

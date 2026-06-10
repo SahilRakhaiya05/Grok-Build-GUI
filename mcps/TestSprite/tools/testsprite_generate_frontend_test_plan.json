@@ -1,0 +1,24 @@
+{
+  "name": "testsprite_generate_frontend_test_plan",
+  "description": "Generate test plan for frontend test.",
+  "inputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "projectPath": {
+        "description": "Absolute path of current project root",
+        "type": "string"
+      },
+      "needLogin": {
+        "default": true,
+        "description": "Whether to include login in the test plan, only for frontend test",
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "projectPath",
+      "needLogin"
+    ],
+    "additionalProperties": false
+  }
+}

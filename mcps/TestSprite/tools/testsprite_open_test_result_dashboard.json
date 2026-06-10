@@ -1,0 +1,22 @@
+{
+  "name": "testsprite_open_test_result_dashboard",
+  "description": "Open an interactive web dashboard to review and modify finished test cases. Use this tool when users want to review test results, fix failing tests, or modify test steps. The dashboard displays all test cases with their execution status, allows users to view test details, edit individual steps, and re-run tests from any step. Prerequisites: (1) Tests must have been generated first using 'testsprite_generate_code_and_execute', (2) Local project must be running on the configured port for re-running tests.",
+  "inputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "projectPath": {
+        "description": "Absolute path of current project root",
+        "type": "string"
+      },
+      "modificationContext": {
+        "description": "Context about the test results or modifications to review",
+        "type": "string"
+      }
+    },
+    "required": [
+      "projectPath"
+    ],
+    "additionalProperties": false
+  }
+}

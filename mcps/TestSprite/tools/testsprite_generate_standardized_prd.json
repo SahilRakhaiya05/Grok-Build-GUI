@@ -1,0 +1,18 @@
+{
+  "name": "testsprite_generate_standardized_prd",
+  "description": "Generate a structured standard PRD.",
+  "inputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "projectPath": {
+        "description": "Absolute path of current project root",
+        "type": "string"
+      }
+    },
+    "required": [
+      "projectPath"
+    ],
+    "additionalProperties": false
+  }
+}

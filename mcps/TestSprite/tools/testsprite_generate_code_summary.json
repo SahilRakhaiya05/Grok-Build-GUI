@@ -1,0 +1,18 @@
+{
+  "name": "testsprite_generate_code_summary",
+  "description": "Analyze the project repository and summarize the codebase.",
+  "inputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "projectRootPath": {
+        "description": "Absolute path of current project root",
+        "type": "string"
+      }
+    },
+    "required": [
+      "projectRootPath"
+    ],
+    "additionalProperties": false
+  }
+}

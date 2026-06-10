@@ -1,0 +1,9 @@
+{
+  "name": "testsprite_check_account_info",
+  "description": "Check the current user's TestSprite account information including name, subscription plan, credits, and email address.",
+  "inputSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  }
+}

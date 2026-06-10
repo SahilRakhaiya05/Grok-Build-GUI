@@ -1,0 +1,48 @@
+{
+  "name": "testsprite_bootstrap",
+  "description": "BEFORE calling this tool, check if .testsprite/config.json exists. If config.json EXISTS, DO NOT call this tool - proceed directly with other tools instead. This tool is ONLY for first-time project initialization when no configuration exists. NEVER call for: adding new test cases, modifying tests, re-running tests, or any operation on an already-configured project.",
+  "inputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "localPort": {
+        "description": "The localPort of the local service is usually defined in the codebase, such as in the Dockerfile. \n       Alternatively, you can determine it based on the language and framework used in the project.",
+        "default": 5173,
+        "type": "number",
+        "minimum": 1,
+        "maximum": 65535
+      },
+      "pathname": {
+        "description": "Webpage path (without domain). Defaults to an empty string if not provided.",
+        "type": "string"
+      },
+      "type": {
+        "description": "The type of test, can be detected from the codebase",
+        "type": "string",
+        "enum": [
+          "frontend",
+          "backend"
+        ]
+      },
+      "projectPath": {
+        "description": "Absolute path of current project root",
+        "type": "string"
+      },
+      "testScope": {
+        "description": "The scope of the test:\n  - codebase: entire codebase;\n  - diff: staged changes that has not been commited;",
+        "type": "string",
+        "enum": [
+          "codebase",
+          "diff"
+        ]
+      }
+    },
+    "required": [
+      "localPort",
+      "type",
+      "projectPath",
+      "testScope"
+    ],
+    "additionalProperties": false
+  }
+}
